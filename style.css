@@ -87,3 +87,16 @@ margin-left: 10px;
     margin-top: 15px;
     margin-left: 19px;
     }
+
+  .past{
+    background-color: red;
+
+  }
+
+  .present{
+    background-color: blue;
+  }
+
+  .future{
+    background-color: green;
+  }
