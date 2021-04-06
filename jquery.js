@@ -5,11 +5,6 @@ $(document).ready(function(){
 //Calculate the number of hours from now and a  given hour (in 24 hours format) of the day
 // If result is <0 means the given time is in the future
 // If result is >0 means the given time is in the past
-var pastTime = "true";
-var presentTime = "true";
-var futureTime = "true";
-
-
 function hoursFromNow(time) {
     //Create an instance of moment for the current time
     var now=moment();
@@ -18,17 +13,121 @@ function hoursFromNow(time) {
     //Return the difference in hours between the two moments
     return now.diff(todayTime,"hours");
   };
+var since9AM = hoursFromNow(9);
+if (since9AM>0){
+    $("#hour9AM").addClass("past")
+}
+else if(since9AM<0){
+    $("#hour9AM").addClass("future")
+}
+
+else{
+    $("#hour9AM").addClass("present")
+}
 
 
+var since10AM = hoursFromNow(9);
+if (since10AM>0){
+    $("#hour10AM").addClass("past")
+}
+else if(since10AM<0){
+    $("#hour10AM").addClass("future")
+}
+
+else{
+    $("#hour10AM").addClass("present")
+}
 
 
+var since11AM = hoursFromNow(9);
+if (since11AM>0){
+    $("#hour11AM").addClass("past")
+}
+else if(since11AM<0){
+    $("#hour11AM").addClass("future")
+}
+
+else{
+    $("#hour11AM").addClass("present")
+}
 
 
+var since12PM = hoursFromNow(9);
+if (since12PM>0){
+    $("#hour12PM").addClass("past")
+}
+else if(since12PM<0){
+    $("#hour12PM").addClass("future")
+}
+
+else{
+    $("#hour12PM").addClass("present")
+}
 
 
+var since1PM = hoursFromNow(9);
+if (since1PM>0){
+    $("#hour1PM").addClass("past")
+}
+else if(since1PM<0){
+    $("#hour1PM").addClass("future")
+}
+
+else{
+    $("#hour1PM").addClass("present")
+}
 
 
+var since2PM = hoursFromNow(9);
+if (since2PM>0){
+    $("#hour2PM").addClass("past")
+}
+else if(since2PM<0){
+    $("#hour2PM").addClass("future")
+}
 
+else{
+    $("#hour2PM").addClass("present")
+}
+
+
+var since3PM = hoursFromNow(9);
+if (since3PM>0){
+    $("#hour3PM").addClass("past")
+}
+else if(since3PM<0){
+    $("#hour3PM").addClass("future")
+}
+
+else{
+    $("#hour3PM").addClass("present")
+}
+
+
+var since4PM = hoursFromNow(9);
+if (since4PM>0){
+    $("#hour4PM").addClass("past")
+}
+else if(since4PM<0){
+    $("#hour4PM").addClass("future")
+}
+
+else{
+    $("#hour4PM").addClass("present")
+}
+
+
+var since5PM = hoursFromNow(9);
+if (since5PM>0){
+    $("#hour5PM").addClass("past")
+}
+else if(since5PM<0){
+    $("#hour5PM").addClass("future")
+}
+
+else{
+    $("#hour5PM").addClass("present")
+}
 
 
 
@@ -37,10 +136,13 @@ function hoursFromNow(time) {
 
 
   //localStorage.setItem(".col-sm-11","#woot");
+ $("#saveBTN").on("click",function(){
+    $('input[type="text"]').each(function(){    
+        var id = $(this).attr("id");
+        var value = $(this).val();
+       localStorage.setItem("#userInput", value);
 
-$(".fa fa-save").click(function(){
-    row.push({
-        input:""
-    })
-    localStorage.setItem("saveButton",JSON.stringify("row"))
+    });   
 });
+   
+ 

@@ -20,13 +20,10 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <link rel="stylesheet" href="jquery-ui.min.css">
     
-    <script src="jquery-ui.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="jquery.js"></script>
+ 
     
     <title>Work Day Scheduler</title>
    
@@ -44,26 +41,24 @@
 
       
     <div class="container">
-      <div class="row" id="row1">
-        <div id="hour-9AM"></div>
-        <div class="col-sm-2" style="background-color:white;">
+      <div class="row" id="hour9AM">
+        <div class="col-sm-2" >
           <p>9AM</p>
         </div>
-        <div class="col-sm-8" div="woot" style="background-color:rgb(180, 180, 180);" >
-         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
+        <div class="col-sm-8" class="entry"  >
+         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold" div="userInput"></textarea>
         </div>
-        
         <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-          <button style="font-size:24px" class="saveButton"> <i class="fa fa-save"></i></button>
+          <button style="font-size:24px" class="saveButton" id=saveBTN> <i class="fa fa-save"></i></button>
         </div>
       </div>
+
     
-    <div class="row">
-      <div id="hour-10AM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour10AM">
+      <div class="col-sm-2">
         <p>10AM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -72,12 +67,12 @@
      </div>
     </div>
 
-    <div class="row">
-      <div id="hour-11AM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+
+    <div class="row" id="hour11AM">
+      <div class="col-sm-2">
         <p>11AM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -85,12 +80,11 @@
     </div>
     </div>
   
-    <div class="row">
-      <div id="hour-12PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour12PM">
+      <div class="col-sm-2">
         <p>12PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -98,12 +92,11 @@
     </div>
     </div>
 
-    <div class="row">
-      <div id="hour-1PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour1PM">
+      <div class="col-sm-2">
         <p>1PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -111,12 +104,11 @@
     </div>
     </div>
 
-    <div class="row">
-      <div id="hour-2PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour2PM">
+      <div class="col-sm-2">
         <p>2PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -124,12 +116,11 @@
     </div>
     </div>
 
-    <div class="row">
-      <div id="hour-3PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour3PM">
+      <div class="col-sm-2">
         <p>3PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -137,12 +128,11 @@
     </div>
     </div>
 
-    <div class="row">
-      <div id="hour-4PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour4PM">
+      <div class="col-sm-2">
         <p>4PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8" >
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -150,12 +140,11 @@
     </div>
     </div>
 
-    <div class="row">
-      <div id="hour-5PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
+    <div class="row" id="hour5PM">
+      <div class="col-sm-2">
         <p>5PM</p>
       </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
+      <div class="col-sm-8">
         <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
       </div>
       <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
@@ -163,137 +152,8 @@
     </div>
     </div>
   
-    <div class="row">
-      <div id="hour-6PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>6PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-7PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>7PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>    
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-8PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>8PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-9PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>9PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-10PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>10PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-11PM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>11PM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
-
-    <div class="row">
-      <div id="hour-12AM"></div>
-      <div class="col-sm-2" style="background-color:white;">
-        <p>12AM</p>
-      </div>
-      <div class="col-sm-8" style="background-color:rgb(180, 180, 180);">
-        <textarea class="col-sm-11" style="font-size:16px; font-weight:bold"></textarea>
-      </div>
-      <div class="col-sm-2" style="background-color:rgb(44, 209, 209);">
-        <button style="font-size:24px" class="saveButton1"> <i class="fa fa-save"></i></button>
-    </div>
-    </div>
   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-    
+    </div>
+  <script src="./jquery.js"></script>
   </body>
 </html>
