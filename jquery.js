@@ -26,7 +26,7 @@ else{
 }
 
 
-var since10AM = hoursFromNow(9);
+var since10AM = hoursFromNow(10);
 if (since10AM>0){
     $("#hour10AM").addClass("past")
 }
@@ -39,7 +39,7 @@ else{
 }
 
 
-var since11AM = hoursFromNow(9);
+var since11AM = hoursFromNow(11);
 if (since11AM>0){
     $("#hour11AM").addClass("past")
 }
@@ -52,7 +52,7 @@ else{
 }
 
 
-var since12PM = hoursFromNow(9);
+var since12PM = hoursFromNow(12);
 if (since12PM>0){
     $("#hour12PM").addClass("past")
 }
@@ -65,7 +65,7 @@ else{
 }
 
 
-var since1PM = hoursFromNow(9);
+var since1PM = hoursFromNow(13);
 if (since1PM>0){
     $("#hour1PM").addClass("past")
 }
@@ -78,7 +78,7 @@ else{
 }
 
 
-var since2PM = hoursFromNow(9);
+var since2PM = hoursFromNow(14);
 if (since2PM>0){
     $("#hour2PM").addClass("past")
 }
@@ -91,7 +91,7 @@ else{
 }
 
 
-var since3PM = hoursFromNow(9);
+var since3PM = hoursFromNow(15);
 if (since3PM>0){
     $("#hour3PM").addClass("past")
 }
@@ -104,7 +104,7 @@ else{
 }
 
 
-var since4PM = hoursFromNow(9);
+var since4PM = hoursFromNow(16);
 if (since4PM>0){
     $("#hour4PM").addClass("past")
 }
@@ -117,7 +117,7 @@ else{
 }
 
 
-var since5PM = hoursFromNow(9);
+var since5PM = hoursFromNow(17);
 if (since5PM>0){
     $("#hour5PM").addClass("past")
 }
@@ -133,16 +133,62 @@ else{
 
 
 
+//Local Storage Code:
+var visitorInput = document.querySelector("#userInput");
+var userSave = document.querySelector("#saveBTN");
 
 
+renderLastRegistered();
+
+function renderLastRegistered(){
+var input = localStorage.getItem("userInput");
+if (visitorInput){
+    userInput.textContent=input;
+}
+};
+
+
+userSave.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var userInput = document.querySelector("#userInput").value;
+
+    if(userInput===""){
+        displayMessage("error", "Timeslot cannot be blank");
+    } else {
+        displayMessage("success", "Timeslot filled!!!");
+
+
+
+        userInput.textContent=userInput;
+
+        document.querySelector("userInput").value="";
+
+        localStorage.setItem("userInput",slotInfo);
+
+
+        
+    }
+});
   //localStorage.setItem(".col-sm-11","#woot");
- $("#saveBTN").on("click",function(){
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* $("#saveBTN").on("click",function(){
     $('input[type="text"]').each(function(){    
         var id = $(this).attr("id");
         var value = $(this).val();
-       localStorage.setItem("#userInput", value);
+       localStorage.setItem("#saveBTN", "#userInput");
+       console.log("#userInput");
 
     });   
 });
-   
+   */
  
