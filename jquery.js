@@ -154,41 +154,19 @@ userSave.addEventListener("click", function(event) {
     var userInput = document.querySelector("#userInput").value;
 
     if(userInput===""){
-        displayMessage("error", "Timeslot cannot be blank");
+        alert("Timeslot cannot be left blank", "error");
     } else {
-        displayMessage("success", "Timeslot filled!!!");
+        alert("Timeslot Successfully Filled", "success");
 
 
 
         userInput.textContent=userInput;
 
-        document.querySelector("userInput").value="";
+        document.querySelector("#userInput").value="";
 
-        localStorage.setItem("userInput",slotInfo);
+        localStorage.setItem("userInput",userInput);
 
 
         
     }
 });
-  //localStorage.setItem(".col-sm-11","#woot");
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- /* $("#saveBTN").on("click",function(){
-    $('input[type="text"]').each(function(){    
-        var id = $(this).attr("id");
-        var value = $(this).val();
-       localStorage.setItem("#saveBTN", "#userInput");
-       console.log("#userInput");
-
-    });   
-});
-   */
- 
