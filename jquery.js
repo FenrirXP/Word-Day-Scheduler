@@ -1,3 +1,4 @@
+//used moment to get the current date and to continue updating 
 $(document).ready(function(){
     $("#hello2").text(moment().format("ddd MMM Do, YYYY"));
 });
@@ -133,40 +134,60 @@ else{
 
 
 
-//Local Storage Code:
+//Local Storage Code: created variables for user input, the save button and an arrary of tasks times
 var visitorInput = document.querySelector("#userInput");
 var userSave = document.querySelector("#saveBTN");
+var tasks =  {
+    task9AM:"",
+    task10AM:"",
+    task11AM:"",
+    task12PM:"",
+    task1PM:"",
+    task2PM:"",
+    task3PM:"",
+    task4PM:"",
+    task5PM:"",
 
-
-renderLastRegistered();
-
-function renderLastRegistered(){
-var input = localStorage.getItem("userInput");
-if (visitorInput){
-    userInput.textContent=input;
 }
-};
+//code to retrieve information from local storage to display to user when the window is refreshed or closed
+ var savedTasks = localStorage.getItem("tasks");
+
+ if(savedTasks){
+     tasks=JSON.parse(savedTasks);
+     document.getElementById("hour9AMTask").value=tasks.task9AM;
+     document.getElementById("hour10AMTask").value=tasks.task10AM;
+     document.getElementById("hour11AMTask").value=tasks.task11AM;
+     document.getElementById("hour12PMTask").value=tasks.task12PM;
+     document.getElementById("hour1PMTask").value=tasks.task1PM;
+     document.getElementById("hour2PMTask").value=tasks.task2PM;
+     document.getElementById("hour3PMTask").value=tasks.task3PM;
+     document.getElementById("hour4PMTask").value=tasks.task4PM;
+     document.getElementById("hour5PMTask").value=tasks.task5PM;
+ }
 
 
-userSave.addEventListener("click", function(event) {
+//code to save items to local storage when user inputs information
+document.addEventListener("click", function(event) {
     event.preventDefault();
+    if (event.target.matches(".saveButton")){
 
-    var userInput = document.querySelector("#userInput").value;
-
-    if(userInput===""){
-        alert("Timeslot cannot be left blank", "error");
-    } else {
-        alert("Timeslot Successfully Filled", "success");
-
-
-
-        userInput.textContent=userInput;
-
-        document.querySelector("#userInput").value="";
-
-        localStorage.setItem("userInput",userInput);
-
-
+        var time= event.target.dataset.time;
+        var task= document.getElementById("hour"+time+"Task").value;
+        tasks["task"+time]=task;
         
+        localStorage.setItem("tasks",JSON.stringify(tasks));
     }
+
+
 });
+
+
+
+
+
+
+
+
+
+  
+   
